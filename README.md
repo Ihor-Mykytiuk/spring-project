@@ -23,3 +23,56 @@
 - **Administration**
   - As an administrator, I want to be able to add, edit, and delete games, genres, platforms, and news
   - As an administrator, I want to be able to manage users (e.g., block, delete)
+
+### System behaviours
+
+1. **User Management**
+    - Register a new user account.
+    - Login a user.
+    - Logout a user.
+    - View user profile details and activity.
+    - Edit user profile information.
+
+2. **Game Information**
+    - Get detailed information about a specific game.
+    - Search for games based on title, genre, or platform.
+    - View a list of all games or filtered by genre/platform.
+
+3. **User Game Lists**
+    - Add a game to a user's list (completed, playing, abandoned, plan to play).
+    - Remove a game from a user's list.
+    - View a user's game lists.
+    - Update the status of games in a user's list.
+
+4. **Reviews and Ratings**
+    - Create a new review for a game.
+    - Update an existing review.
+    - Remove a review.
+    - Read reviews for a specific game.
+
+5. **News**
+    - Read news articles related to games.
+    - Search for news articles by keyword or game.
+
+### REST API endpoints
+
+| Endpoint                              | Method | Description                              |
+|---------------------------------------|--------|------------------------------------------|
+| /api/users/register                   | POST   | Register a new user                      |
+| /api/users/login                      | POST   | Login a user                             |
+| /api/users/logout                     | POST   | Logout a user                            |
+| /api/users/{userId}                   | GET    | Get user profile details                 |
+| /api/users/{userId}                   | PUT    | Update user profile                      |
+| /api/games/{gameId}                   | GET    | Get game details                         |
+| /api/games/search                     | GET    | Search for games                         |
+| /api/games                            | GET    | Get a list of games (with optional filters) |
+| /api/users/{userId}/gamelists         | GET    | Get a user's game lists                  |
+| /api/users/{userId}/gamelists/{gameId}| POST   | Add a game to a user's list              |
+| /api/users/{userId}/gamelists/{gameId}| DELETE | Remove a game from a user's list         |
+| /api/reviews                          | POST   | Submit a review for a game               |
+| /api/reviews/{reviewId}               | PUT    | Update a review                          |
+| /api/reviews/{reviewId}               | DELETE | Delete a review                          |
+| /api/games/{gameId}/reviews           | GET    | Get reviews for a game                   |
+| /api/news                             | GET    | Get news articles (with optional filters)|
+| /api/news/search                      | GET    | Search for news articles                 |
+
